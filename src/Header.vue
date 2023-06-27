@@ -20,7 +20,7 @@
       </div>
       <div>
         <a href="index.html"
-          ><img src="./assets/images/logo.svg" alt="Logo"
+          ><img src="./assets/images/logo.svg" alt="Logo of company"
         /></a>
       </div>
     </div>
@@ -28,7 +28,7 @@
       <ul class="flex items-center text-lg">
         <li>
           <a class="flex items-center md:mr-10" href="index.html"
-            ><img src="./assets/images/logo.svg" alt="Logo"
+            ><img src="./assets/images/logo.svg" alt="Logo of company"
           /></a>
         </li>
         <li><a class="mr-4" href="#">Collections</a></li>
