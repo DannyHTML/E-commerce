@@ -18,9 +18,14 @@
     <div
       class="m-auto mb-3 flex w-4/5 max-w-[350px] justify-between rounded-lg bg-gray-100 px-3 py-3"
     >
-      <button><img src="./assets/images/icon-minus.svg" alt="" /></button>
-      <p class="font-bold">0</p>
-      <button><img src="./assets/images/icon-plus.svg" alt="" /></button>
+      <button @click="minus">
+        <img src="./assets/images/icon-minus.svg" alt="" />
+      </button>
+      <span class="font-bold">{{ counter.value }}</span>
+      <!-- <p class="font-bold">0</p> -->
+      <button @click="plus">
+        <img src="./assets/images/icon-plus.svg" alt="" />
+      </button>
     </div>
     <div
       class="m-auto flex w-4/5 max-w-[350px] items-center justify-center rounded-lg bg-primary-0 px-3 py-3"
@@ -33,6 +38,20 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { reactive } from "vue";
+
+const counter = reactive({ value: 0 });
+
+const plus = () => {
+  counter.value++;
+};
+
+const minus = () => {
+  if (counter.value > 0) {
+    counter.value--;
+  }
+};
+</script>
 
 <style></style>
