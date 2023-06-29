@@ -38,37 +38,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      currentIndex: 0,
-      images: [
-        { src: "./src/assets/images/image-product-1.jpg", alt: "Image 1" },
-        { src: "./src/assets/images/image-product-2.jpg", alt: "Image 2" },
-        { src: "./src/assets/images/image-product-3.jpg", alt: "Image 3" },
-        { src: "./src/assets/images/image-product-4.jpg", alt: "Image 4" },
-      ],
-    };
-  },
-  computed: {
-    currentImage() {
-      return this.images[this.currentIndex].src;
-    },
-    currentImageAlt() {
-      return this.images[this.currentIndex].alt;
-    },
-  },
-  methods: {
-    previousSlide() {
-      this.currentIndex =
-        (this.currentIndex - 1 + this.images.length) % this.images.length;
-    },
-    nextSlide() {
-      this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    },
-  },
-};
+<script setup>
+import { ref, computed } from "vue";
+
+const currentIndex = ref(0);
+const images = [
+  { src: "./src/assets/images/image-product-1.jpg", alt: "Image 1" },
+  { src: "./src/assets/images/image-product-2.jpg", alt: "Image 2" },
+  { src: "./src/assets/images/image-product-3.jpg", alt: "Image 3" },
+  { src: "./src/assets/images/image-product-4.jpg", alt: "Image 4" },
+];
+
+const currentImage = computed(() => images[currentIndex.value].src);
+const currentImageAlt = computed(() => images[currentIndex.value].alt);
+
+const previousSlide = () =>
+  (currentIndex.value =
+    (currentIndex.value - 1 + images.length) % images.length);
+const nextSlide = () =>
+  (currentIndex.value = (currentIndex.value + 1) % images.length);
 </script>
 
 <style></style>
