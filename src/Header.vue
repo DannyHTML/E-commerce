@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative flex h-20 items-center justify-between px-7 md:mx-7 md:border-b-2 md:px-0"
+    class="relative flex h-20 items-center justify-between px-7 md:mx-auto md:w-4/5 md:border-b-2 md:px-0"
   >
     <div class="relative flex items-center md:hidden">
       <div class="mr-5">
@@ -32,11 +32,14 @@
       </ul>
     </div>
     <div class="flex items-center">
+      <!-- shopping cart -->
+
       <div>
         <img
           class="mr-5 h-6 w-6 cursor-pointer md:h-5 md:w-5"
           src="./assets/images/icon-cart.svg"
           alt="Image of shopping cart"
+          @click="shoppingCard = !shoppingCard"
         />
         <div class="relative -right-4 -top-8">
           <div class="absolute h-4 w-4 rounded-full bg-orange-400">
@@ -45,11 +48,27 @@
             >
           </div>
         </div>
-        <div class="fixed left-0 top-20 z-10 flex justify-center">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi,
-          harum.
+        <div
+          class="absolute left-1/2 top-24 z-10 mx-auto w-11/12 -translate-x-1/2 sm:max-w-lg xl:-right-1/2 xl:w-80 xl:-translate-x-1/2"
+          :class="{ hidden: shoppingCard }"
+        >
+          <div class="h-64 rounded-md border-2 bg-white xl:h-52">
+            <h2 class="w-full border-b-2 p-5 text-lg font-bold capitalize">
+              cart
+            </h2>
+            <div class="relative top-0 h-36">
+              <p
+                class="text-gray absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold opacity-70"
+              >
+                Your cart is empty.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- End shopping cart -->
+
       <div>
         <img
           class="h-6 w-6 md:h-10 md:w-10"
@@ -83,6 +102,8 @@
         <li class="mb-2"><a href="#">Contact</a></li>
       </ul>
     </div>
+
+    <!-- End mobile menu -->
   </nav>
   <div
     id="overlay"
@@ -95,6 +116,7 @@
 import { ref } from "vue";
 
 const isHidden = ref(true);
+const shoppingCard = ref(true);
 </script>
 
 <style></style>
