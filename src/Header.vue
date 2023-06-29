@@ -8,14 +8,7 @@
           id="mobile-menu-open"
           src="./assets/images/icon-menu.svg"
           alt="Mobile menu open"
-        />
-      </div>
-      <div class="absolute z-40">
-        <img
-          class="hidden"
-          id="mobile-menu-close"
-          src="./assets/images/icon-close.svg"
-          alt="Mobile menu close"
+          @click="isHidden = !isHidden"
         />
       </div>
       <div>
@@ -61,47 +54,44 @@
         />
       </div>
     </div>
+
+    <!-- mobile menu -->
+
     <div
       id="mobile-menu"
-      class="fixed left-0 top-0 z-30 hidden h-screen w-2/3 bg-white text-lg sm:text-xl"
+      class="fixed left-0 top-0 z-30 h-screen w-2/3 bg-white text-lg sm:text-xl"
+      :class="{ hidden: isHidden }"
     >
-      <ul class="ml-6 mt-16 font-bold">
-        <li class="mb-2"><a href="">Collections</a></li>
-        <li class="mb-2"><a href="">Men</a></li>
-        <li class="mb-2"><a href="">Women</a></li>
-        <li class="mb-2"><a href="">About</a></li>
-        <li class="mb-2"><a href="">Contact</a></li>
+      <div class="absolute z-40">
+        <img
+          class="ml-7 mt-8"
+          id="mobile-menu-close"
+          src="./assets/images/icon-close.svg"
+          alt="Mobile menu close"
+          @click="isHidden = !isHidden"
+        />
+      </div>
+
+      <ul class="ml-6 mt-16 font-bold" @click="isHidden = !isHidden">
+        <li class="mb-2"><a href="#">Collections</a></li>
+        <li class="mb-2"><a href="#">Men</a></li>
+        <li class="mb-2"><a href="#">Women</a></li>
+        <li class="mb-2"><a href="#">About</a></li>
+        <li class="mb-2"><a href="#">Contact</a></li>
       </ul>
     </div>
   </nav>
   <div
     id="overlay"
-    class="fixed left-0 top-0 z-20 hidden h-full w-full bg-gray-500 opacity-75"
+    class="fixed left-0 top-0 z-20 h-full w-full bg-gray-500 opacity-75"
+    :class="{ hidden: isHidden }"
   ></div>
 </template>
 
-<script>
-export default {
-  mounted() {
-    const mobileMenuOpen = document.querySelector("#mobile-menu-open");
-    const mobileMenu = document.querySelector("#mobile-menu");
-    const mobileMenuClose = document.querySelector("#mobile-menu-close");
-    const overlay = document.querySelector("#overlay");
+<script setup>
+import { ref } from "vue";
 
-    mobileMenuOpen.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      mobileMenuClose.classList.toggle("hidden");
-      mobileMenuOpen.classList.toggle("hidden");
-      overlay.classList.toggle("hidden");
-    });
-    mobileMenuClose.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-      mobileMenuClose.classList.toggle("hidden");
-      mobileMenuOpen.classList.toggle("hidden");
-      overlay.classList.toggle("hidden");
-    });
-  },
-};
+const isHidden = ref(true);
 </script>
 
 <style></style>
