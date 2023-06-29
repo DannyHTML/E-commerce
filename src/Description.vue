@@ -7,7 +7,7 @@
       <h2 class="mb-5 text-2xl font-bold capitalize leading-7">
         fall limited edition sneakers
       </h2>
-      <p class="">
+      <p>
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they&prime;ll withstand
         everything the weather can offer.
@@ -16,8 +16,6 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup></script>
 
 <style></style>

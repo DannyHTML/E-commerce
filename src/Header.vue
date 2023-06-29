@@ -32,7 +32,7 @@
       </ul>
     </div>
     <div class="flex items-center">
-      <div class="">
+      <div>
         <img
           class="mr-5 h-6 w-6 cursor-pointer md:h-5 md:w-5"
           src="./assets/images/icon-cart.svg"
@@ -45,6 +45,10 @@
             >
           </div>
         </div>
+        <div class="fixed left-0 top-20 z-10 flex justify-center">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi,
+          harum.
+        </div>
       </div>
       <div>
         <img
@@ -56,7 +60,6 @@
     </div>
 
     <!-- mobile menu -->
-
     <div
       id="mobile-menu"
       class="fixed left-0 top-0 z-30 h-screen w-2/3 bg-white text-lg sm:text-xl"
