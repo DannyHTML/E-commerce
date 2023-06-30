@@ -1,19 +1,13 @@
 <template>
-  <div class="mb-5 flex justify-center lg:h-[600px]">
-    <div class="max-w-md justify-center">
+  <div>
+    <!-- Original template content -->
+    <div class="max-w-lg justify-center">
       <div class="relative">
         <img
-          class="object-contain md:rounded-xl"
+          class="cursor-pointer object-contain md:rounded-xl"
           :src="currentImage"
           :alt="currentImageAlt"
-        />
-        <img
-          v-for="(image, index) in images"
-          :key="index"
-          class="absolute left-0 top-0 rounded-xl object-contain opacity-0"
-          :src="image.src"
-          :alt="image.alt"
-          :class="{ 'opacity-100': index === currentIndex }"
+          @click="openLightbox(currentIndex)"
         />
         <div
           class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
@@ -34,21 +28,86 @@
           </button>
         </div>
       </div>
-      <div
-        class="hidden md:mt-5 md:flex md:justify-between md:gap-4"
-        id="lightbox"
-      >
-        <div
-          v-for="(image, index) in images"
-          :key="index"
-          class="hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
-        >
+      <div class="mt-5 flex justify-center">
+        <div class="flex gap-4">
+          <div
+            v-for="(image, index) in images"
+            :key="index"
+            class="hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
+            @click="openLightbox(index)"
+          >
+            <img
+              class="rounded-md hover:opacity-40"
+              :src="image.src"
+              :alt="image.alt"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox overlay -->
+    <div
+      v-if="showLightbox"
+      class="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-75"
+    >
+      <div class="max-w-xl">
+        <div class="relative">
           <img
-            class="rounded-md hover:opacity-40"
+            class="object-contain md:rounded-xl"
+            :src="currentImage"
+            :alt="currentImageAlt"
+          />
+          <button class="absolute -top-12 right-0" @click="closeLightbox">
+            <img
+              class="h-5 w-5 brightness-200"
+              src="./assets/images/icon-close.svg"
+              alt=""
+            />
+          </button>
+
+          <img
+            v-for="(image, index) in images"
+            :key="index"
+            class="absolute left-0 top-0 rounded-xl object-contain opacity-0"
             :src="image.src"
             :alt="image.alt"
-            @click="openLightbox(index)"
+            :class="{ 'opacity-100': index === currentIndex }"
           />
+          <div
+            class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between"
+          >
+            <button @click="previousSlide">
+              <img
+                class="absolute bottom-0 left-0 right-1/2 -translate-x-1/2 translate-y-1/2 rounded-[50%] bg-white p-4"
+                src="./assets/images/icon-previous.svg"
+                alt=""
+              />
+            </button>
+            <button @click="nextSlide">
+              <img
+                class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 rounded-[50%] bg-white p-4"
+                src="./assets/images/icon-next.svg"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+        <div class="mt-5 flex justify-center">
+          <div class="flex gap-4">
+            <div
+              v-for="(image, index) in images"
+              :key="index"
+              class="mr-3 mt-4 h-20 w-20 hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
+              @click="openLightbox(index)"
+            >
+              <img
+                class="rounded-md hover:opacity-40"
+                :src="image.src"
+                :alt="image.alt"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -83,6 +142,8 @@ const openLightbox = (index) => {
 const closeLightbox = () => {
   showLightbox.value = false;
 };
+
+const showLightbox = ref(false);
 </script>
 
 <style></style>
