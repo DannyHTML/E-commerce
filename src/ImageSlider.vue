@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="flex justify-center">
     <!-- Original template content -->
-    <div class="max-w-lg justify-center">
+    <div class="mb-5 max-w-lg justify-center">
       <div class="relative">
         <img
           class="cursor-pointer object-contain md:rounded-xl"
@@ -28,7 +28,7 @@
           </button>
         </div>
       </div>
-      <div class="mt-5 flex justify-center">
+      <div class="mt-5 hidden justify-center md:flex">
         <div class="flex gap-4">
           <div
             v-for="(image, index) in images"
