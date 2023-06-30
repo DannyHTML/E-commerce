@@ -1,9 +1,15 @@
 <template>
   <div id="app">
     <Header />
-    <ImageSlider />
-    <Description />
-    <AppButtonCard />
+    <div
+      class="md:mx-8 md:-mt-20 md:flex md:h-screen md:items-center md:justify-around xl:justify-center xl:gap-40"
+    >
+      <ImageSlider />
+      <div>
+        <Description />
+        <AppButtonCard />
+      </div>
+    </div>
   </div>
 </template>
 
