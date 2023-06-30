@@ -34,45 +34,20 @@
           </button>
         </div>
       </div>
-      <div class="hidden md:mt-5 md:flex md:justify-between md:gap-4">
+      <div
+        class="hidden md:mt-5 md:flex md:justify-between md:gap-4"
+        id="lightbox"
+      >
         <div
+          v-for="(image, index) in images"
+          :key="index"
           class="hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
         >
           <img
             class="rounded-md hover:opacity-40"
-            src="./assets/images/image-product-1-thumbnail.jpg"
-            alt=""
-            @click="pic1"
-          />
-        </div>
-        <div
-          class="hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
-        >
-          <img
-            class="rounded-md hover:opacity-40"
-            src="./assets/images/image-product-2-thumbnail.jpg"
-            alt=""
-            @click="pic2"
-          />
-        </div>
-        <div
-          class="hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
-        >
-          <img
-            class="rounded-md hover:opacity-40"
-            src="./assets/images/image-product-3-thumbnail.jpg"
-            alt=""
-            @click="pic3"
-          />
-        </div>
-        <div
-          class="hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
-        >
-          <img
-            class="rounded-md hover:opacity-40"
-            src="./assets/images/image-product-4-thumbnail.jpg"
-            alt=""
-            @click="pic4"
+            :src="image.src"
+            :alt="image.alt"
+            @click="openLightbox(index)"
           />
         </div>
       </div>
@@ -100,20 +75,13 @@ const previousSlide = () =>
 const nextSlide = () =>
   (currentIndex.value = (currentIndex.value + 1) % images.length);
 
-const pic1 = () => {
-  console.log("pic1");
+const openLightbox = (index) => {
+  currentIndex.value = index;
+  showLightbox.value = true;
 };
 
-const pic2 = () => {
-  console.log("pic2");
-};
-
-const pic3 = () => {
-  console.log("pic3");
-};
-
-const pic4 = () => {
-  console.log("pic4");
+const closeLightbox = () => {
+  showLightbox.value = false;
 };
 </script>
 
