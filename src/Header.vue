@@ -50,7 +50,7 @@
         </div>
 
         <div
-          class="absolute left-1/2 top-24 z-10 mx-auto w-11/12 -translate-x-1/2 sm:max-w-lg xl:-right-1/2 xl:w-80 xl:-translate-x-1/2"
+          class="absolute left-1/2 top-24 z-10 mx-auto w-11/12 -translate-x-1/2 sm:max-w-lg xl:-right-1/2 xl:w-80 xl:-translate-x-1/2 shadow-xl"
           :class="{ hidden: shoppingCard }"
         >
           <div class="h-64 rounded-md border-2 bg-white xl:h-52">

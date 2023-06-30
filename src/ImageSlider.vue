@@ -51,7 +51,7 @@
       v-if="showLightbox"
       class="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-75"
     >
-      <div class="max-w-md">
+      <div class="md:max-w-sm lg:max-w-md" >
         <div class="relative">
           <img
             class="object-contain md:rounded-xl"
