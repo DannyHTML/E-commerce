@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center">
     <!-- Original template content -->
-    <div class="mb-5 max-w-lg justify-center">
+    <div class="max-w-lg justify-center">
       <div class="relative">
         <img
           class="cursor-pointer object-contain md:rounded-xl"
