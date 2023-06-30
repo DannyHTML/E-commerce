@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center">
+  <div class="mb-5 flex justify-center md:mb-0">
     <!-- Original template content -->
     <div class="max-w-lg justify-center">
       <div class="relative">
