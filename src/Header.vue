@@ -41,16 +41,17 @@
           alt="Image of shopping cart"
           @click="shoppingCard = !shoppingCard"
         />
-        <div class="relative -right-4 -top-8">
-          <div class="absolute h-4 w-4 rounded-full bg-orange-400">
-            <span class="flex cursor-default justify-center text-xs text-white"
-              >1</span
+        <div class="relative -right-4 -top-8" v-show="counter.value >= 1">
+          <div class="absolute h-5 w-5 rounded-full bg-orange-400" id="counter">
+            <span
+              class="mt-[2px] flex cursor-default justify-center text-xs text-white"
+              >{{ counter.value }}</span
             >
           </div>
         </div>
 
         <div
-          class="absolute left-1/2 top-24 z-10 mx-auto w-11/12 -translate-x-1/2 sm:max-w-lg xl:-right-1/2 xl:w-80 xl:-translate-x-1/2 shadow-xl"
+          class="absolute left-1/2 top-24 z-10 mx-auto w-11/12 -translate-x-1/2 shadow-xl sm:max-w-lg xl:-right-1/2 xl:w-80 xl:-translate-x-1/2"
           :class="{ hidden: shoppingCard }"
         >
           <div class="h-64 rounded-md border-2 bg-white xl:h-52">
@@ -118,7 +119,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { counter } from "./components/Counter";
 
 const isHidden = ref(true);
 const shoppingCard = ref(true);

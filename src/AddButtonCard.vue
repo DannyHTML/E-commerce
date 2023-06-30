@@ -41,9 +41,7 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-
-const counter = reactive({ value: 0 });
+import { counter } from "./components/Counter";
 
 const plus = () => {
   counter.value++;
