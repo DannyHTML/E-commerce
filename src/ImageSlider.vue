@@ -1,7 +1,7 @@
 <template>
   <div class="mb-5 flex justify-center md:mb-0">
     <!-- Original template content -->
-    <div class="max-w-lg justify-center">
+    <div class="max-w-sm justify-center">
       <div class="relative">
         <img
           class="cursor-pointer object-contain md:rounded-xl"
@@ -51,7 +51,7 @@
       v-if="showLightbox"
       class="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-75"
     >
-      <div class="max-w-xl">
+      <div class="max-w-md">
         <div class="relative">
           <img
             class="object-contain md:rounded-xl"
