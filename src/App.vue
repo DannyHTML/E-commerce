@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="md:mb-20 xl:mb-0">
-    <Header />
+      <Header />
     </div>
     <div
-      class="md:mx-8 md:-mt-20 md:flex md:h-screen md:items-center md:justify-around xl:justify-center xl:gap-40"
+      class="md:mx-8 md:-mt-20 md:flex md:h-screen md:items-center md:justify-around md:gap-10 xl:justify-center xl:gap-40"
     >
       <ImageSlider />
       <div>
