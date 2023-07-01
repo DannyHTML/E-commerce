@@ -30,7 +30,7 @@
       <div
         class="m-auto flex w-4/5 max-w-sm items-center justify-center rounded-lg bg-primary-0 px-3 py-3 md:w-3/5"
       >
-        <button class="flex text-white">
+        <button class="flex text-white" @click="addToCartClicked">
           <img class="mr-3" src="./assets/images/icon-cart.svg" alt="" />
           Add to cart
         </button>
@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import { counter } from "./components/Counter";
+import { counter, addToCart } from "./components/Counter";
 
 const plus = () => {
   counter.value++;
@@ -50,6 +50,10 @@ const minus = () => {
   if (counter.value > 0) {
     counter.value--;
   }
+};
+
+const addToCartClicked = () => {
+  addToCart();
 };
 </script>
 

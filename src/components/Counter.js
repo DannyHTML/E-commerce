@@ -1,5 +1,11 @@
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 
 export const counter = reactive({
   value: 0,
 });
+
+export let cartQuantity = ref(0);
+
+export const addToCart = () => {
+  cartQuantity.value += counter.value;
+};
