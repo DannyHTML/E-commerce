@@ -40,6 +40,7 @@
           src="./assets/images/icon-cart.svg"
           alt="Image of shopping cart"
           @click="shoppingCard = !shoppingCard"
+          @mouseover="MouseOver"
         />
         <div class="relative -right-4 -top-8" v-show="counter.value >= 1">
           <div class="absolute h-5 w-5 rounded-full bg-orange-400" id="counter">
@@ -52,7 +53,8 @@
 
         <div
           class="absolute left-1/2 top-24 z-10 mx-auto w-11/12 -translate-x-1/2 shadow-xl sm:max-w-lg xl:-right-1/2 xl:w-80 xl:-translate-x-1/2"
-          :class="{ hidden: shoppingCard }"
+          :class="{ hidden: shoppingCard || isHidden }"
+          @mouseleave="MouseLeave"
         >
           <div class="h-64 rounded-md border-2 bg-white xl:h-52">
             <h2 class="w-full border-b-2 p-5 text-lg font-bold capitalize">
@@ -71,7 +73,9 @@
 
       <!-- End shopping cart -->
 
-      <div>
+      <div
+        class="hover:cursor-pointer hover:rounded-full hover:outline hover:outline-primary-0"
+      >
         <img
           class="h-6 w-6 md:h-10 md:w-10"
           src="./assets/images/image-avatar.png"
@@ -85,7 +89,7 @@
       <div
         id="mobile-menu"
         class="fixed left-0 top-0 z-30 h-screen w-2/3 bg-white text-lg sm:text-xl"
-        v-show="!isHidden"
+        v-show="isHidden"
       >
         <div class="absolute z-40">
           <img
@@ -113,17 +117,28 @@
     <div
       id="overlay"
       class="fixed left-0 top-0 z-20 h-full w-full bg-gray-500 opacity-75"
-      v-show="!isHidden"
+      v-show="isHidden"
     ></div>
   </Transition>
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import { counter } from "./components/Counter";
 
-const isHidden = ref(true);
+const isHidden = ref(false);
 const shoppingCard = ref(true);
+const timeoutId = ref(null);
+
+const MouseOver = () => {
+  shoppingCard.value = false;
+};
+
+const MouseLeave = () => {
+  timeoutId.value = setTimeout(() => {
+    shoppingCard.value = true;
+  }, 150);
+};
 </script>
 
 <style scoped>
