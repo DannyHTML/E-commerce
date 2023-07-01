@@ -60,6 +60,7 @@
             <h2 class="w-full border-b-2 p-5 text-lg font-bold capitalize">
               cart
             </h2>
+            <!-- The cart shop with items inside still has to be made -->
             <div class="relative top-0 h-36">
               <p
                 class="text-gray absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold opacity-70"
