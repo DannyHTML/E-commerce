@@ -42,7 +42,7 @@
           @click="shoppingCard = !shoppingCard"
           @mouseover="MouseOver"
         />
-        <div class="relative -right-4 -top-8" v-show="cartQuantity >= 1">
+        <div class="relative -right-4 -top-8" v-show="cartQuantity">
           <div class="absolute h-5 w-5 rounded-full bg-orange-400" id="counter">
             <span
               class="mt-[2px] flex cursor-default justify-center text-xs text-white"
@@ -124,7 +124,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { counter, addToCart, cartQuantity } from "./components/Counter";
+import { cartQuantity } from "./components/Counter";
 
 const isHidden = ref(false);
 const shoppingCard = ref(true);

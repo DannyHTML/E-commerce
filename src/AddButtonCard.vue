@@ -28,9 +28,10 @@
         </button>
       </div>
       <div
-        class="m-auto flex w-4/5 max-w-sm items-center justify-center rounded-lg bg-primary-0 px-3 py-3 md:w-3/5"
+        class="m-auto flex w-4/5 max-w-sm items-center justify-center rounded-lg bg-primary-0 px-3 py-3 hover:cursor-pointer md:w-3/5"
+        @click="addToCartClicked"
       >
-        <button class="flex text-white" @click="addToCartClicked">
+        <button class="flex text-white">
           <img class="mr-3" src="./assets/images/icon-cart.svg" alt="" />
           Add to cart
         </button>
