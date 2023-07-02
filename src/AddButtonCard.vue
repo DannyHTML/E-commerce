@@ -55,6 +55,11 @@ const minus = () => {
 
 const addToCartClicked = () => {
   addToCart();
+  resetCounter();
+};
+
+const resetCounter = () => {
+  counter.value = 0;
 };
 </script>
 
