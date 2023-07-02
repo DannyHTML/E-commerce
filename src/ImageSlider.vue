@@ -33,7 +33,7 @@
           <div
             v-for="(image, index) in images"
             :key="index"
-            class="hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
+            class="hover:cursor-pointer hover:rounded-lg hover:outline hover:outline-primary-0"
             @click="openLightbox(index)"
           >
             <img
@@ -51,7 +51,7 @@
       v-if="showLightbox"
       class="fixed inset-0 flex items-center justify-center bg-gray-700 bg-opacity-75"
     >
-      <div class="md:max-w-sm lg:max-w-md" >
+      <div class="md:max-w-sm lg:max-w-md">
         <div class="relative">
           <img
             class="object-contain md:rounded-xl"
@@ -98,7 +98,7 @@
             <div
               v-for="(image, index) in images"
               :key="index"
-              class="mr-3 mt-4 h-20 w-20 hover:cursor-pointer hover:rounded-lg hover:border-2 hover:border-primary-0"
+              class="mr-3 mt-4 h-20 w-20 hover:cursor-pointer hover:rounded-lg hover:outline hover:outline-primary-0"
               @click="openLightbox(index)"
             >
               <img
