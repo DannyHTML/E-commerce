@@ -186,47 +186,31 @@ const MouseLeave = () => {
 </script>
 
 <style scoped>
-.slide-enter-from {
-  transform: translateX(-100%);
-}
-.slide-enter-to {
-  transform: translateX(0);
-}
-.slide-enter-active {
-  transition: all 0.3s ease-in;
-}
-
-.slide-leave-from {
-  transform: translateX(0);
-}
-
+.slide-enter-from,
 .slide-leave-to {
   transform: translateX(-100%);
 }
-
+.slide-enter-to,
+.slide-leave-from {
+  transform: translateX(0);
+}
+.slide-enter-active,
 .slide-leave-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.fade-enter-from {
-  opacity: 0;
-}
-.fade-enter-to {
-  opacity: 1;
-}
-.fade-enter-active {
-  transition: all 0.3s ease-in;
-}
+/* test */
 
-.fade-leave-from {
-  opacity: 1;
-}
-
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
-
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-enter-active,
 .fade-leave-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in;
 }
 </style>
