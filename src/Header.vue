@@ -70,7 +70,10 @@
                 Your cart is empty.
               </p>
               <!-- Cart content when triggerd -->
-              <div class="justify-center" :class="{ hidden: !isCartClicked }">
+              <div
+                class="flex justify-center"
+                :class="{ hidden: !isCartClicked }"
+              >
                 <div
                   class="absolute top-1/2 w-full max-w-md -translate-y-1/2 px-4"
                 >
