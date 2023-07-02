@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { counter, addToCart } from "./components/Counter";
+import { counter, addToCart, resetCounter } from "./components/Counter";
 
 const plus = () => {
   counter.value++;
@@ -56,10 +56,6 @@ const minus = () => {
 const addToCartClicked = () => {
   addToCart();
   resetCounter();
-};
-
-const resetCounter = () => {
-  counter.value = 0;
 };
 </script>
 

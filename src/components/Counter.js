@@ -9,3 +9,7 @@ export let cartQuantity = ref(0);
 export const addToCart = () => {
   cartQuantity.value += counter.value;
 };
+
+export const resetCounter = () => {
+  counter.value = 0;
+};
