@@ -7,7 +7,7 @@
           class="cursor-pointer object-contain md:rounded-xl"
           :src="currentImage"
           :alt="currentImageAlt"
-          @click="openLightbox(currentIndex)"
+          @click="isClickable && openLightbox(currentIndex)"
         />
         <div
           class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
@@ -115,7 +115,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const currentIndex = ref(0);
 const images = [
@@ -144,6 +144,17 @@ const closeLightbox = () => {
 };
 
 const showLightbox = ref(false);
+
+// Disable lightbox before md breakpoint, 768px
+
+const isClickable = ref(false);
+
+const checkBreakpoint = () => {
+  isClickable.value = window.innerWidth >= 768;
+};
+
+onMounted(() => window.addEventListener("resize", checkBreakpoint));
+onUnmounted(() => window.removeEventListener("resize", checkBreakpoint));
 </script>
 
 <style></style>
