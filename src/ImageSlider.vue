@@ -153,8 +153,14 @@ const checkBreakpoint = () => {
   isClickable.value = window.innerWidth >= 768;
 };
 
-onMounted(() => window.addEventListener("resize", checkBreakpoint));
-onUnmounted(() => window.removeEventListener("resize", checkBreakpoint));
+onMounted(() => {
+  checkBreakpoint(); //Otherwise the function only works after resizing the browser and not instant.
+  window.addEventListener("resize", checkBreakpoint);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkBreakpoint);
+});
 </script>
 
 <style></style>
