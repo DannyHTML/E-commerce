@@ -13,3 +13,7 @@ export const addToCart = () => {
 export const resetCounter = () => {
   counter.value = 0;
 };
+
+// test below
+
+export const isCartClicked = ref(false);

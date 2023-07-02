@@ -65,12 +65,12 @@
             <div class="xl:h-38 relative top-0 h-44">
               <p
                 class="text-gray absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold opacity-70"
+                :class="{ hidden: isCartClicked }"
               >
-                <!-- just for now, hidden -->
                 Your cart is empty.
               </p>
               <!-- Cart content when triggerd -->
-              <div class="hidden justify-center">
+              <div class="justify-center" :class="{ hidden: !isCartClicked }">
                 <div
                   class="absolute top-1/2 w-full max-w-md -translate-y-1/2 px-4"
                 >
@@ -90,7 +90,14 @@
                     </div>
                     <button class="cursor-pointer">
                       <!-- @click to remove product/hide cart content while triggerd -->
-                      <img src="./assets/images/icon-delete.svg" alt="" />
+                      <img
+                        src="./assets/images/icon-delete.svg"
+                        alt=""
+                        @click="
+                          isCartClicked = false;
+                          cartQuantity = 0;
+                        "
+                      />
                     </button>
                   </div>
                   <div
@@ -160,8 +167,8 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { cartQuantity, counter } from "./components/Counter";
+import { ref, watch } from "vue";
+import { cartQuantity, isCartClicked } from "./components/Counter";
 
 const isHidden = ref(false);
 const shoppingCard = ref(true);
@@ -176,8 +183,6 @@ const MouseLeave = () => {
     shoppingCard.value = true;
   }, 150);
 };
-
-// if addToCart() gets triggerd, show content inside cart. Content with nothing in cart, goes hidden
 </script>
 
 <style scoped>
