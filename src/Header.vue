@@ -32,7 +32,7 @@
       </ul>
     </div>
     <div class="flex items-center">
-      <!-- shopping cart -->
+      <!-- shopping cart icon -->
 
       <div>
         <img
@@ -51,22 +51,58 @@
           </div>
         </div>
 
+        <!-- shopping cart content -->
+
         <div
           class="absolute left-1/2 top-24 z-10 mx-auto w-11/12 -translate-x-1/2 shadow-xl sm:max-w-lg xl:-right-1/2 xl:w-80 xl:-translate-x-1/2"
           :class="{ hidden: shoppingCard || isHidden }"
           @mouseleave="MouseLeave"
         >
-          <div class="h-64 rounded-md border-2 bg-white xl:h-52">
+          <div class="h-62 xl:h-54 rounded-md border-2 bg-white">
             <h2 class="w-full border-b-2 p-5 text-lg font-bold capitalize">
               cart
             </h2>
-            <!-- The cart shop with items inside still has to be made -->
-            <div class="relative top-0 h-36">
+            <div class="xl:h-38 relative top-0 h-44">
               <p
                 class="text-gray absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold opacity-70"
               >
+                <!-- just for now, hidden -->
                 Your cart is empty.
               </p>
+              <!-- Cart content when triggerd -->
+              <div class="hidden justify-center">
+                <div
+                  class="absolute top-1/2 w-full max-w-md -translate-y-1/2 px-4"
+                >
+                  <div class="flex items-center justify-around gap-2">
+                    <div class="h-12 w-12">
+                      <img
+                        class="rounded-lg"
+                        src="./assets/images/image-product-1.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="">
+                      <p class="text-sm capitalize">
+                        fall limited edition sneakers
+                      </p>
+                      <p class="text-sm">$125.00 x {{ cartQuantity }}</p>
+                    </div>
+                    <button class="cursor-pointer">
+                      <!-- @click to remove product/hide cart content while triggerd -->
+                      <img src="./assets/images/icon-delete.svg" alt="" />
+                    </button>
+                  </div>
+                  <div
+                    class="m-auto mt-4 cursor-pointer rounded-md bg-primary-0 p-3 text-center"
+                  >
+                    <button class="font-bold capitalize text-white">
+                      checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- End cart content when triggerd -->
             </div>
           </div>
         </div>
@@ -125,7 +161,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { cartQuantity } from "./components/Counter";
+import { cartQuantity, counter } from "./components/Counter";
 
 const isHidden = ref(false);
 const shoppingCard = ref(true);
@@ -140,6 +176,8 @@ const MouseLeave = () => {
     shoppingCard.value = true;
   }, 150);
 };
+
+// if addToCart() gets triggerd, show content inside cart. Content with nothing in cart, goes hidden
 </script>
 
 <style scoped>
