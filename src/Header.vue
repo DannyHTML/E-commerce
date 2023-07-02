@@ -86,7 +86,10 @@
                       <p class="text-sm capitalize">
                         fall limited edition sneakers
                       </p>
-                      <p class="text-sm">$125.00 x {{ cartQuantity }}</p>
+                      <p class="text-sm">
+                        $125.00 x {{ cartQuantity }} =
+                        <span class="font-bold"> ${{ totalPrice() }} </span>
+                      </p>
                     </div>
                     <button class="cursor-pointer">
                       <!-- @click to remove product/hide cart content while triggerd -->
@@ -182,6 +185,11 @@ const MouseLeave = () => {
   timeoutId.value = setTimeout(() => {
     shoppingCard.value = true;
   }, 150);
+};
+
+const totalPrice = () => {
+  const priceItem = 125;
+  return (priceItem * cartQuantity.value).toFixed(2);
 };
 </script>
 
