@@ -22,7 +22,7 @@
         <button @click="minus">
           <img src="./assets/images/icon-minus.svg" alt="button minus" />
         </button>
-        <span class="font-bold">{{ counter.value }}</span>
+        <span class="font-bold">{{ counter }}</span>
         <button @click="plus">
           <img src="./assets/images/icon-plus.svg" alt="button plus" />
         </button>
@@ -53,7 +53,7 @@ const plus = () => {
 };
 
 const minus = () => {
-  if (counter.value > 0) {
+  if (counter.value > 1) {
     counter.value--;
   }
 };
