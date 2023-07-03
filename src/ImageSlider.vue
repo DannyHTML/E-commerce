@@ -1,6 +1,5 @@
 <template>
   <div class="mb-5 flex justify-center md:mb-0">
-    <!-- Original template content -->
     <div class="max-w-sm justify-center">
       <div class="relative">
         <img
@@ -12,16 +11,16 @@
         <div
           class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
         >
-          <button @click="previousSlide">
+          <button class="rounded-full md:hidden bg-white w-8 h-8 flex justify-center items-center leading-none" @click="previousSlide">
             <img
-              class="rounded-[50%] bg-white p-2 md:hidden"
+              class="h-4 w-3 -ml-1"
               src="./assets/images/icon-previous.svg"
               alt=""
             />
           </button>
-          <button @click="nextSlide">
+          <button class="rounded-full md:hidden bg-white w-8 h-8 flex justify-center items-center leading-none" @click="nextSlide">
             <img
-              class="rounded-[50%] bg-white p-2 md:hidden"
+              class="h-4 w-3 -mr-1 "
               src="./assets/images/icon-next.svg"
               alt=""
             />

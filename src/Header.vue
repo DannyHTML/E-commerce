@@ -173,7 +173,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import { cartQuantity, isCartClicked } from "./components/Counter";
 
 const isHidden = ref(false);
