@@ -1,6 +1,5 @@
 <template>
   <div class="mb-5 flex justify-center md:mb-0">
-    <!-- Original template content -->
     <div class="max-w-sm justify-center">
       <div class="relative">
         <img
