@@ -53,7 +53,7 @@ const plus = () => {
 };
 
 const minus = () => {
-  if (counter.value > 0) {
+  if (counter.value > 1) {
     counter.value--;
   }
 };
