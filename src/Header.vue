@@ -6,14 +6,14 @@
       <div class="mr-5">
         <img
           id="mobile-menu-open"
-          src="./assets/images/icon-menu.svg"
+          src="/images/icon-menu.svg"
           alt="Mobile menu open"
           @click="isHidden = !isHidden"
         />
       </div>
       <div>
         <a href="index.html"
-          ><img src="./assets/images/logo.svg" alt="Logo of company"
+          ><img src="/images/logo.svg" alt="Logo of company"
         /></a>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <ul class="flex items-center text-lg">
         <li>
           <a class="flex items-center md:mr-10" href="index.html"
-            ><img src="./assets/images/logo.svg" alt="Logo of company"
+            ><img src="/images/logo.svg" alt="Logo of company"
           /></a>
         </li>
         <li><a class="mr-4" href="#">Collections</a></li>
@@ -37,7 +37,7 @@
       <div>
         <img
           class="mr-5 h-6 w-6 cursor-pointer md:h-5 md:w-5"
-          src="./assets/images/icon-cart.svg"
+          src="/images/icon-cart.svg"
           alt="Image of shopping cart"
           @click="shoppingCard = !shoppingCard"
           @mouseover="MouseOver"
@@ -81,7 +81,7 @@
                     <div class="h-12 w-12">
                       <img
                         class="rounded-lg"
-                        src="./assets/images/image-product-1.jpg"
+                        src="/images/image-product-1.jpg"
                         alt=""
                       />
                     </div>
@@ -97,7 +97,7 @@
                     <button class="cursor-pointer">
                       <!-- @click to remove product/hide cart content while triggerd -->
                       <img
-                        src="./assets/images/icon-delete.svg"
+                        src="/images/icon-delete.svg"
                         alt=""
                         @click="
                           isCartClicked = false;
@@ -128,7 +128,7 @@
       >
         <img
           class="h-6 w-6 md:h-10 md:w-10"
-          src="./assets/images/image-avatar.png"
+          src="/images/image-avatar.png"
           alt="Image of person"
         />
       </div>
@@ -145,7 +145,7 @@
           <img
             class="ml-7 mt-8"
             id="mobile-menu-close"
-            src="./assets/images/icon-close.svg"
+            src="/images/icon-close.svg"
             alt="Mobile menu close"
             @click="isHidden = !isHidden"
           />
