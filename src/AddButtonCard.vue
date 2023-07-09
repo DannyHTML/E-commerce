@@ -20,11 +20,11 @@
         class="m-auto mb-3 flex w-4/5 max-w-sm justify-between rounded-lg bg-gray-100 px-3 py-3 md:mb-0 md:w-2/5"
       >
         <button @click="minus">
-          <img src="./assets/images/icon-minus.svg" alt="button minus" />
+          <img src="/images/icon-minus.svg" alt="button minus" />
         </button>
         <span class="font-bold">{{ counter }}</span>
         <button @click="plus">
-          <img src="./assets/images/icon-plus.svg" alt="button plus" />
+          <img src="/images/icon-plus.svg" alt="button plus" />
         </button>
       </div>
       <div
@@ -32,7 +32,7 @@
         @click="addToCartClicked"
       >
         <button class="flex text-white">
-          <img class="mr-3" src="./assets/images/icon-cart.svg" alt="" />
+          <img class="mr-3" src="/images/icon-cart.svg" alt="" />
           Add to cart
         </button>
       </div>

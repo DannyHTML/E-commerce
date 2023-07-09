@@ -11,19 +11,17 @@
         <div
           class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
         >
-          <button class="rounded-full md:hidden bg-white w-8 h-8 flex justify-center items-center leading-none" @click="previousSlide">
-            <img
-              class="h-4 w-3 -ml-1"
-              src="./assets/images/icon-previous.svg"
-              alt=""
-            />
+          <button
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-white leading-none md:hidden"
+            @click="previousSlide"
+          >
+            <img class="-ml-1 h-4 w-3" src="/images/icon-previous.svg" alt="" />
           </button>
-          <button class="rounded-full md:hidden bg-white w-8 h-8 flex justify-center items-center leading-none" @click="nextSlide">
-            <img
-              class="h-4 w-3 -mr-1 "
-              src="./assets/images/icon-next.svg"
-              alt=""
-            />
+          <button
+            class="flex h-8 w-8 items-center justify-center rounded-full bg-white leading-none md:hidden"
+            @click="nextSlide"
+          >
+            <img class="-mr-1 h-4 w-3" src="/images/icon-next.svg" alt="" />
           </button>
         </div>
       </div>
@@ -60,7 +58,7 @@
           <button class="absolute -top-12 right-0" @click="closeLightbox">
             <img
               class="h-5 w-5 brightness-200"
-              src="./assets/images/icon-close.svg"
+              src="/images/icon-close.svg"
               alt=""
             />
           </button>
@@ -74,6 +72,7 @@
             :class="{ 'opacity-100': index === currentIndex }"
           />
           <div
+<<<<<<< HEAD
           class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
         >
           <button class="rounded-full bg-white w-8 h-8 flex justify-center items-center leading-none" @click="previousSlide">
@@ -91,6 +90,25 @@
             />
           </button>
         </div>
+=======
+            class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between"
+          >
+            <button @click="previousSlide">
+              <img
+                class="absolute bottom-0 left-0 right-1/2 -translate-x-1/2 translate-y-1/2 rounded-[50%] bg-white p-4"
+                src="/images/icon-previous.svg"
+                alt=""
+              />
+            </button>
+            <button @click="nextSlide">
+              <img
+                class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 rounded-[50%] bg-white p-4"
+                src="/images/icon-next.svg"
+                alt=""
+              />
+            </button>
+          </div>
+>>>>>>> 0eb87370cf7d50090506f8751ed354db3e3b67f7
         </div>
         <div class="mt-5 flex justify-center">
           <div class="flex gap-4">
@@ -118,10 +136,10 @@ import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const currentIndex = ref(0);
 const images = [
-  { src: "./src/assets/images/image-product-1.jpg", alt: "Image 1" },
-  { src: "./src/assets/images/image-product-2.jpg", alt: "Image 2" },
-  { src: "./src/assets/images/image-product-3.jpg", alt: "Image 3" },
-  { src: "./src/assets/images/image-product-4.jpg", alt: "Image 4" },
+  { src: "./images/image-product-1.jpg", alt: "Image 1" },
+  { src: "./images/image-product-2.jpg", alt: "Image 2" },
+  { src: "./images/image-product-3.jpg", alt: "Image 3" },
+  { src: "./images/image-product-4.jpg", alt: "Image 4" },
 ];
 
 const currentImage = computed(() => images[currentIndex.value].src);
