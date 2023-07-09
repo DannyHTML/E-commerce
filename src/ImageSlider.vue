@@ -77,14 +77,14 @@
           <button class="rounded-full bg-white w-8 h-8 flex justify-center items-center leading-none" @click="previousSlide">
             <img
               class="h-4 w-3 -ml-1"
-              src="./assets/images/icon-previous.svg"
+              src="/images/icon-previous.svg"
               alt=""
             />
           </button>
           <button class="rounded-full bg-white w-8 h-8 flex justify-center items-center leading-none" @click="nextSlide">
             <img
               class="h-4 w-3 -mr-1 "
-              src="./assets/images/icon-next.svg"
+              src="/images/icon-next.svg"
               alt=""
             />
           </button>
