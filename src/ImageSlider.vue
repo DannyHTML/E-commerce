@@ -72,7 +72,6 @@
             :class="{ 'opacity-100': index === currentIndex }"
           />
           <div
-<<<<<<< HEAD
           class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
         >
           <button class="rounded-full bg-white w-8 h-8 flex justify-center items-center leading-none" @click="previousSlide">
@@ -90,25 +89,6 @@
             />
           </button>
         </div>
-=======
-            class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between"
-          >
-            <button @click="previousSlide">
-              <img
-                class="absolute bottom-0 left-0 right-1/2 -translate-x-1/2 translate-y-1/2 rounded-[50%] bg-white p-4"
-                src="/images/icon-previous.svg"
-                alt=""
-              />
-            </button>
-            <button @click="nextSlide">
-              <img
-                class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 rounded-[50%] bg-white p-4"
-                src="/images/icon-next.svg"
-                alt=""
-              />
-            </button>
-          </div>
->>>>>>> 0eb87370cf7d50090506f8751ed354db3e3b67f7
         </div>
         <div class="mt-5 flex justify-center">
           <div class="flex gap-4">
