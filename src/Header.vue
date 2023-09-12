@@ -24,11 +24,13 @@
             ><img src="/images/logo.svg" alt="Logo of company"
           /></a>
         </li>
-        <li><a class="mr-4" href="#">Collections</a></li>
-        <li><a class="mr-4" href="#">Men</a></li>
-        <li><a class="mr-4" href="#">Women</a></li>
-        <li><a class="mr-4" href="#">About</a></li>
-        <li><a class="mr-4" href="#">Contact</a></li>
+        <li>
+          <a class="links mr-4" href="#">Collections</a>
+        </li>
+        <li><a class="links mr-4" href="#">Men</a></li>
+        <li><a class="links mr-4" href="#">Women</a></li>
+        <li><a class="links mr-4" href="#">About</a></li>
+        <li><a class="links mr-4" href="#">Contact</a></li>
       </ul>
     </div>
     <div class="flex items-center">
@@ -124,7 +126,7 @@
       <!-- End shopping cart -->
 
       <div
-        class="hover:cursor-pointer hover:rounded-full hover:outline hover:outline-primary-0"
+        class="transition-all hover:cursor-pointer hover:rounded-full hover:outline hover:outline-primary-0"
       >
         <img
           class="h-6 w-6 md:h-10 md:w-10"
@@ -197,6 +199,8 @@ const totalPrice = () => {
 </script>
 
 <style scoped>
+/* slide */
+
 .slide-enter-from,
 .slide-leave-to {
   transform: translateX(-100%);
@@ -210,7 +214,7 @@ const totalPrice = () => {
   transition: all 0.3s ease-in-out;
 }
 
-/* test */
+/* fade */
 
 .fade-enter-from,
 .fade-leave-to {
@@ -223,5 +227,35 @@ const totalPrice = () => {
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.3s ease-in;
+}
+
+.links {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.links::before,
+.links::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  background-color: orange;
+  border-radius: 2px;
+  opacity: 90%;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.links::after {
+  right: 100%;
+  left: 100%;
+}
+
+.links:hover::after {
+  right: 0;
+  left: 0;
 }
 </style>

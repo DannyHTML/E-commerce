@@ -12,6 +12,4 @@ export const resetCounter = () => {
   counter.value = 1;
 };
 
-// test below
-
 export const isCartClicked = ref(false);
