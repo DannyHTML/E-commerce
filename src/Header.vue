@@ -25,12 +25,12 @@
           /></a>
         </li>
         <li>
-          <a class="links mr-4" href="#">Collections</a>
+          <a class="links mr-2 lg:mr-4" href="#">Collections</a>
         </li>
-        <li><a class="links mr-4" href="#">Men</a></li>
-        <li><a class="links mr-4" href="#">Women</a></li>
-        <li><a class="links mr-4" href="#">About</a></li>
-        <li><a class="links mr-4" href="#">Contact</a></li>
+        <li><a class="links mr-2 lg:mr-4" href="#">Men</a></li>
+        <li><a class="links mr-2 lg:mr-4" href="#">Women</a></li>
+        <li><a class="links mr-2 lg:mr-4" href="#">About</a></li>
+        <li><a class="links mr-2 lg:mr-4" href="#">Contact</a></li>
       </ul>
     </div>
     <div class="flex items-center">
@@ -126,7 +126,7 @@
       <!-- End shopping cart -->
 
       <div
-        class="transition-all hover:cursor-pointer hover:rounded-full hover:outline hover:outline-primary-0"
+        class="hover:cursor-pointer hover:rounded-full hover:outline hover:outline-primary-0"
       >
         <img
           class="h-6 w-6 md:h-10 md:w-10"
@@ -244,7 +244,7 @@ const totalPrice = () => {
   bottom: 0;
   background-color: orange;
   border-radius: 2px;
-  opacity: 90%;
+  opacity: 70%;
   transition: all 0.3s ease;
   z-index: -1;
 }
