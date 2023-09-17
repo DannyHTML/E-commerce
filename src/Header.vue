@@ -232,6 +232,7 @@ const totalPrice = () => {
 .links {
   position: relative;
   transition: all 0.3s ease;
+  padding: 3px;
 }
 
 .links::before,
