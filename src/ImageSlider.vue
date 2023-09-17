@@ -137,12 +137,12 @@ const currentImageAlt = computed<string>(
   () => images.value[currentIndex.value].alt
 );
 
-const previousSlide = (): void => {
+const previousSlide = () => {
   currentIndex.value =
     (currentIndex.value - 1 + images.value.length) % images.value.length;
 };
 
-const nextSlide = (): void => {
+const nextSlide = () => {
   currentIndex.value = (currentIndex.value + 1) % images.value.length;
 };
 
