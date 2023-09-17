@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Header from "./Header.vue";
 import ImageSlider from "./ImageSlider.vue";
 import Description from "./Description.vue";

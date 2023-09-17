@@ -174,7 +174,7 @@
   </Transition>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { cartQuantity, isCartClicked } from "./components/Counter";
 
@@ -198,65 +198,4 @@ const totalPrice = () => {
 };
 </script>
 
-<style scoped>
-/* slide */
-
-.slide-enter-from,
-.slide-leave-to {
-  transform: translateX(-100%);
-}
-.slide-enter-to,
-.slide-leave-from {
-  transform: translateX(0);
-}
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.3s ease-in-out;
-}
-
-/* fade */
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.3s ease-in;
-}
-
-.links {
-  position: relative;
-  transition: all 0.3s ease;
-  padding: 3px;
-}
-
-.links::before,
-.links::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 100%;
-  right: 0;
-  bottom: 0;
-  background-color: orange;
-  border-radius: 2px;
-  opacity: 70%;
-  transition: all 0.3s ease;
-  z-index: -1;
-}
-
-.links::after {
-  right: 100%;
-  left: 100%;
-}
-
-.links:hover::after {
-  right: 0;
-  left: 0;
-}
-</style>
+<style scoped></style>

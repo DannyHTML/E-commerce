@@ -72,23 +72,25 @@
             :class="{ 'opacity-100': index === currentIndex }"
           />
           <div
-          class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
-        >
-          <button class="rounded-full bg-white w-8 h-8 flex justify-center items-center leading-none" @click="previousSlide">
-            <img
-              class="h-4 w-3 -ml-1"
-              src="/images/icon-previous.svg"
-              alt=""
-            />
-          </button>
-          <button class="rounded-full bg-white w-8 h-8 flex justify-center items-center leading-none" @click="nextSlide">
-            <img
-              class="h-4 w-3 -mr-1 "
-              src="/images/icon-next.svg"
-              alt=""
-            />
-          </button>
-        </div>
+            class="absolute top-1/2 flex w-full -translate-y-1/2 justify-between px-3"
+          >
+            <button
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-white leading-none"
+              @click="previousSlide"
+            >
+              <img
+                class="-ml-1 h-4 w-3"
+                src="/images/icon-previous.svg"
+                alt=""
+              />
+            </button>
+            <button
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-white leading-none"
+              @click="nextSlide"
+            >
+              <img class="-mr-1 h-4 w-3" src="/images/icon-next.svg" alt="" />
+            </button>
+          </div>
         </div>
         <div class="mt-5 flex justify-center">
           <div class="flex gap-4">
@@ -111,11 +113,17 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
 const currentIndex = ref(0);
-const images = [
+
+interface images {
+  src: string;
+  alt: string;
+}
+
+const images = <images[]>[
   { src: "./images/image-product-1.jpg", alt: "Image 1" },
   { src: "./images/image-product-2.jpg", alt: "Image 2" },
   { src: "./images/image-product-3.jpg", alt: "Image 3" },
@@ -131,7 +139,7 @@ const previousSlide = () =>
 const nextSlide = () =>
   (currentIndex.value = (currentIndex.value + 1) % images.length);
 
-const openLightbox = (index) => {
+const openLightbox = (index: number) => {
   currentIndex.value = index;
   showLightbox.value = true;
 };
