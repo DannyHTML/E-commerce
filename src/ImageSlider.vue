@@ -130,15 +130,20 @@ const images = ref<Images[]>([
   { src: "./images/image-product-4.jpg", alt: "Image 4" },
 ]);
 
-const currentImage = computed<string>(() => images[currentIndex.value].src);
-const currentImageAlt = computed<string>(() => images[currentIndex.value].alt);
+const currentImage = computed<string>(
+  () => images.value[currentIndex.value].src
+);
+const currentImageAlt = computed<string>(
+  () => images.value[currentIndex.value].alt
+);
 
 const previousSlide = (): void => {
-  currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
+  currentIndex.value =
+    (currentIndex.value - 1 + images.value.length) % images.value.length;
 };
 
 const nextSlide = (): void => {
-  currentIndex.value = (currentIndex.value + 1) % images.length;
+  currentIndex.value = (currentIndex.value + 1) % images.value.length;
 };
 
 const openLightbox = (index: number) => {
