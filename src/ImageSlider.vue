@@ -116,28 +116,30 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
 
-const currentIndex = ref(0);
+const currentIndex = ref<number>(0);
 
-interface images {
+interface Images {
   src: string;
   alt: string;
 }
 
-const images = <images[]>[
+const images = ref<Images[]>([
   { src: "./images/image-product-1.jpg", alt: "Image 1" },
   { src: "./images/image-product-2.jpg", alt: "Image 2" },
   { src: "./images/image-product-3.jpg", alt: "Image 3" },
   { src: "./images/image-product-4.jpg", alt: "Image 4" },
-];
+]);
 
-const currentImage = computed(() => images[currentIndex.value].src);
-const currentImageAlt = computed(() => images[currentIndex.value].alt);
+const currentImage = computed<string>(() => images[currentIndex.value].src);
+const currentImageAlt = computed<string>(() => images[currentIndex.value].alt);
 
-const previousSlide = () =>
-  (currentIndex.value =
-    (currentIndex.value - 1 + images.length) % images.length);
-const nextSlide = () =>
-  (currentIndex.value = (currentIndex.value + 1) % images.length);
+const previousSlide = (): void => {
+  currentIndex.value = (currentIndex.value - 1 + images.length) % images.length;
+};
+
+const nextSlide = (): void => {
+  currentIndex.value = (currentIndex.value + 1) % images.length;
+};
 
 const openLightbox = (index: number) => {
   currentIndex.value = index;
