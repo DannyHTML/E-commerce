@@ -161,16 +161,16 @@ const showLightbox = ref(false);
 
 const isClickable = ref(false);
 
-const checkBreakpoint = () => {
+const checkBreakpoint = (): void => {
   isClickable.value = window.innerWidth >= 768;
 };
 
-onMounted(() => {
+onMounted((): void => {
   checkBreakpoint(); //Otherwise the function only works after resizing the browser and not instant.
   window.addEventListener("resize", checkBreakpoint);
 });
 
-onUnmounted(() => {
+onUnmounted((): void => {
   window.removeEventListener("resize", checkBreakpoint);
 });
 </script>
