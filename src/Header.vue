@@ -175,12 +175,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { Ref, ref } from "vue";
 import { cartQuantity, isCartClicked } from "./components/Counter";
 
 const isHidden = ref(false);
 const shoppingCard = ref(true);
-const timeoutId = ref(null);
+const timeoutId: Ref<number | null> = ref(null);
 
 const MouseOver = () => {
   shoppingCard.value = false;
