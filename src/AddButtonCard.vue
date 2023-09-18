@@ -48,17 +48,17 @@ import {
   isCartClicked,
 } from "./components/Counter";
 
-const plus = () => {
+const plus = (): void => {
   counter.value++;
 };
 
-const minus = () => {
+const minus = (): void => {
   if (counter.value > 1) {
     counter.value--;
   }
 };
 
-const addToCartClicked = () => {
+const addToCartClicked = (): void => {
   addToCart();
   resetCounter();
   isCartClicked.value = true;

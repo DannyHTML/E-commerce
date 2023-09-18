@@ -137,40 +137,40 @@ const currentImageAlt = computed<string>(
   () => images.value[currentIndex.value].alt
 );
 
-const previousSlide = () => {
+const previousSlide = (): void => {
   currentIndex.value =
     (currentIndex.value - 1 + images.value.length) % images.value.length;
 };
 
-const nextSlide = () => {
+const nextSlide = (): void => {
   currentIndex.value = (currentIndex.value + 1) % images.value.length;
 };
 
-const openLightbox = (index: number) => {
+const openLightbox = (index: number): void => {
   currentIndex.value = index;
   showLightbox.value = true;
 };
 
-const closeLightbox = () => {
+const closeLightbox = (): void => {
   showLightbox.value = false;
 };
 
-const showLightbox = ref(false);
+const showLightbox = ref<boolean>(false);
 
 // Disable lightbox before md breakpoint, 768px
 
-const isClickable = ref(false);
+const isClickable = ref<boolean>(false);
 
-const checkBreakpoint = () => {
+const checkBreakpoint = (): void => {
   isClickable.value = window.innerWidth >= 768;
 };
 
-onMounted(() => {
+onMounted((): void => {
   checkBreakpoint(); //Otherwise the function only works after resizing the browser and not instant.
   window.addEventListener("resize", checkBreakpoint);
 });
 
-onUnmounted(() => {
+onUnmounted((): void => {
   window.removeEventListener("resize", checkBreakpoint);
 });
 </script>

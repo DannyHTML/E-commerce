@@ -178,21 +178,21 @@
 import { ref } from "vue";
 import { cartQuantity, isCartClicked } from "./components/Counter";
 
-const isHidden = ref(false);
-const shoppingCard = ref(true);
-const timeoutId = ref(null);
+const isHidden = ref<boolean>(false);
+const shoppingCard = ref<boolean>(true);
+const timeoutId = ref<ReturnType<typeof setTimeout> | null>(null);
 
-const MouseOver = () => {
+const MouseOver = (): void => {
   shoppingCard.value = false;
 };
 
-const MouseLeave = () => {
-  timeoutId.value = setTimeout(() => {
+const MouseLeave = (): void => {
+  timeoutId.value = setTimeout((): void => {
     shoppingCard.value = true;
   }, 150);
 };
 
-const totalPrice = () => {
+const totalPrice = (): string => {
   const priceItem = 125;
   return (priceItem * cartQuantity.value).toFixed(2);
 };
