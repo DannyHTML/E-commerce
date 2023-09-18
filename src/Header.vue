@@ -175,7 +175,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { Ref, ref } from "vue";
 import { cartQuantity, isCartClicked } from "./components/Counter";
 
 const isHidden = ref<boolean>(false);
