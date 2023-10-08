@@ -115,6 +115,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
+import { onClickOutside } from "@vueuse.core";
 
 const currentIndex = ref<number>(0);
 
