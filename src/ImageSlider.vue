@@ -93,12 +93,12 @@
               </button>
             </div>
           </div>
-          <div class="mt-5 flex justify-center">
-            <div class="flex gap-4">
+          <div class="mt-5 w-full">
+            <div class="flex w-full justify-between">
               <div
                 v-for="(image, index) in images"
                 :key="index"
-                class="mr-3 mt-4 h-20 w-20 hover:cursor-pointer hover:rounded-lg hover:outline hover:outline-primary-0"
+                class="h-20 w-20 hover:cursor-pointer hover:rounded-lg hover:outline hover:outline-primary-0"
                 @click="openLightbox(index)"
               >
                 <img
