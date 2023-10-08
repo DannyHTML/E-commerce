@@ -157,6 +157,14 @@ const closeLightbox = (): void => {
 
 const showLightbox = ref<boolean>(false);
 
+const mobileMenuEsc = (event: KeyboardEvent): void => {
+  if (event.key === "Escape" && showLightbox.value) {
+    closeLightbox();
+  }
+};
+
+onMounted(() => window.addEventListener("keydown", mobileMenuEsc));
+
 // Disable lightbox before md breakpoint, 768px
 
 const isClickable = ref<boolean>(false);
