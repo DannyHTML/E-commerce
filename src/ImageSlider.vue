@@ -124,7 +124,6 @@ const lightbox = ref<null>(null);
 onMounted(() => {
   onClickOutside(lightbox, () => {
     closeLightbox();
-    console.log("test");
   });
 });
 
