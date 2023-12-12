@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div class="md:mb-20 xl:mb-0">
+    <div class="md:mb-20 ">
       <Header />
     </div>
     <div
-      class="md:mx-8 md:-mt-20 md:flex md:h-screen md:items-center md:justify-around md:gap-10 xl:justify-center xl:gap-40"
+      class="md:flex md:px-5 md:container md:justify-between md:mx-auto gap-10"
     >
       <ImageSlider />
       <div>
@@ -13,6 +13,7 @@
       </div>
     </div>
   </div>
+  <!-- class="md:mx-8 md:-mt-20 md:flex md:h-screen md:items-center md:justify-around md:gap-10 xl:gap-40" -->
 </template>
 
 <script setup lang="ts">

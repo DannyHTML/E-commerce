@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="relative flex h-20 items-center justify-between px-7 md:mx-auto md:w-4/5 md:border-b-2 md:px-0"
+    class="relative container mx-auto flex h-20 items-center justify-between px-7 md:mx-auto md:w-4/5 md:border-b-2 md:px-0"
   >
     <div class="relative flex items-center md:hidden">
       <div class="mr-5">
