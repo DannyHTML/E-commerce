@@ -13,7 +13,6 @@
       </div>
     </div>
   </div>
-  <!-- class="md:mx-8 md:-mt-20 md:flex md:h-screen md:items-center md:justify-around md:gap-10 xl:gap-40" -->
 </template>
 
 <script setup lang="ts">
